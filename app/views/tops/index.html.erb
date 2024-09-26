@@ -33,7 +33,7 @@
 
             <%
               app_url = request.original_url
-              tweet_message = "「#{font.name}」というフォントにいいねしました！みなさんも、このなかのフォントで一番思い出感があるフォントを探してください！#{app_url}"
+              tweet_message = "「#{font.name}」というフォントにいいねしました！\nみなさんも、このなかのフォントで一番思い出感があるフォントを探してください！\n#{app_url}"
               encoded_tweet_message = ERB::Util.url_encode(tweet_message)
             %>
 
