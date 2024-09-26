@@ -4,13 +4,11 @@
     <h1 class="text-5xl font-bold">一番思い出感があるフォントを探すアプリ</h1>
   </div>
 
-
   <div class="flex justify-between items-center my-6">
     <h1 class="text-4xl">この中で、一番思い出感があるフォントは？？</h1>
     <div id="flash" class="text-red-500"></div>
   </div>
 
-  
   <%= button_to "説明を見る", modals_show_path, remote: true, data: { turbo_frame: "_top" }, class: "btn px-4 py-2" %>
   <turbo-frame id="modal-placeholder"></turbo-frame>
 
@@ -18,7 +16,6 @@
     <div class="grid grid-cols-1 gap-8">
       <% @fonts.each do |font| %>
         <div class="p-6 shadow-lg rounded-lg bg-white">
-         
           <p class="<%= font.class_name %> text-5xl mb-4">
             <%= font.name %> <br>
             思い出 おもいで omoide memory ....
@@ -30,20 +27,18 @@
             </div>
 
             <div class="flex items-center">
-              
               <%= form_with url: toggle_like_font_path(font), method: :post, remote: true do %>
                 <button type="submit" class="btn px-4 py-2">いいね</button>
               <% end %>
 
-            <% 
-              app_url = request.original_url 
-              tweet_message = "「#{font.name}」というフォントにいいねしました！     みなさんも、このなかのフォントで一番思い出感があるフォントを探してください！#{app_url}"
+            <%
+              app_url = request.original_url
+              tweet_message = "「#{font.name}」というフォントにいいねしました！みなさんも、このなかのフォントで一番思い出感があるフォントを探してください！#{app_url}"
               encoded_tweet_message = ERB::Util.url_encode(tweet_message)
             %>
 
-         
             <a href="https://twitter.com/intent/tweet?text=<%= encoded_tweet_message %>" 
-              target="_blank" 
+              target="_blank"
               class="ml-4 text-blue-500">
               Xでシェア
             </a>
