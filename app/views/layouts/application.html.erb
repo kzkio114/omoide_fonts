@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "App" %></title>
+    <title><%= content_for(:title) || "一番思い出感があるフォントを探すアプリ" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="このサイトは、あなたにとって一番思い出深いフォントを見つけるためのページです。">
+    <meta name="keywords" content="フォント, 思い出, タイポグラフィ, デザイン">
+    <meta name="author" content="一番思い出感があるフォントを探すアプリ">
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="一番思い出感があるフォントを探すアプリ">
+    <meta property="og:description" content="このサイトは、あなたにとって一番思い出深いフォントを見つけるためのページです。">
+    <meta property="og:image" content="asset_url('app.png') %">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags (for Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="一番思い出感があるフォントを探すアプリ">
+    <meta name="twitter:description" content="このサイトは、あなたにとって一番思い出深いフォントを見つけるためのページです。">
+    <meta name="twitter:image" content="asset_url('app.png') %">
 
     <%= yield :head %>
 
