@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get "fonts/toggle_like"
+  post 'modals/show'
+  delete 'modals/destroy', as: 'close_modal'
+
   resources :fonts do
     member do
       post :toggle_like

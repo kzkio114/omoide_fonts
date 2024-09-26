@@ -5,6 +5,10 @@
     <div id="flash" class="text-red-500"></div>
   </div>
 
+<!-- モーダルを表示するためのリンク -->
+<%= button_to "説明を見る", modals_show_path, remote: true, data: { turbo_frame: "_top" }, class: "btn px-4 py-2" %>
+<turbo-frame id="modal-placeholder"></turbo-frame>
+
   <!-- フォント表示部分 -->
   <div class="container mx-auto p-4">
     <div class="grid grid-cols-1 gap-8">
