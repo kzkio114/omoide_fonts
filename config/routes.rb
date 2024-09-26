@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get "fonts/toggle_like"
   resources :fonts do
-    resources :likes, only: [:create]
-    post "search", on: :collection
+    member do
+      post :toggle_like
+    end
   end
+
 
   root "tops#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
